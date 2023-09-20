@@ -1,6 +1,7 @@
 import hot from './assets/hot.jpg'
 import cold from './assets/cold.jpg'
 import cloud from './assets/cloud.png'
+import { Description } from './components/Description';
 
 
 function App() {
@@ -20,12 +21,13 @@ function App() {
       <h3>cloudy</h3>
     </div>
     <div className='temperature'>
-      <h1>34 °C</h1>
+      <h1>35 °C</h1>
     </div>
   </div>
 
 
   {/* bottom description */}
+  <Description/>
 </div>
 </div>
     </div>
