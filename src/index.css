@@ -57,6 +57,7 @@ width: 55px;
   background: transparent;
   font-weight: 200;
 }
+
 .section__inputs>button{
   padding: 10px 50px;
   border: none;
@@ -82,4 +83,17 @@ width: 55px;
 }
 .temperature>h1{
   font-size: 60px;
+}
+@media screen and (max-width:786px) {
+  .section__inputs>button {
+    padding: 10px 30px;
+  }
+  .section__inputs{
+    gap: 10px;
+  }
+  .section__inputs>input{
+    width: 70%;
+  }
+
+
 }

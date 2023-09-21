@@ -31,4 +31,7 @@
     .section__descriptions{
         grid-template-columns: 1fr 1fr;
     }
+    .card>h2{
+        font-size: 10px!important;
+    }
 }
