@@ -43,6 +43,7 @@ function App() {
       <div className="overlay">
         {weather && (
           <div className="container">
+            {/* search-section */}
             <div className="section section__inputs">
               <input
                 onKeyDown={enter}
@@ -52,7 +53,7 @@ function App() {
               />
               <button onClick={(e) => handleclickunit(e)}>°F</button>
             </div>
-
+{/* temperture-section */}
             <div className="section section__temperature">
               <div className="icon">
                 <h3>
