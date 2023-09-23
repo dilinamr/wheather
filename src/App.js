@@ -2,25 +2,27 @@ import hot from "./assets/hot.jpg";
 import cold from "./assets/cold.jpg";
 import { Description } from "./components/Description";
 import { useEffect, useState } from "react";
-import { getFormattedWeatherData } from "./wheatherService";
+import { getFormattedWeekForecast } from "./wheatherService";
+import TodayWeather from "./components/TodayWeather";
 
 function App() {
   const [city, Setcity] = useState("mahe");
-  const [weather, setWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
   const [units, SetUnits] = useState("metric");
   const [bg, Setbg] = useState(hot);
+
   useEffect(() => {
-    const fetchweatherdata = async () => {
-      const data = await getFormattedWeatherData(city, units);
-      setWeather(data);
+    const fetchForecastData = async () => {
+      const data = await getFormattedWeekForecast(city, units);
+      setForecast(data);
       const threshold = units === "metric" ? 20 : 60;
-      if (data.temp <= threshold) {
+      if (data.forecast[0].temp <= threshold) {
         Setbg(cold);
       } else {
         Setbg(hot);
       }
     };
-    fetchweatherdata();
+    fetchForecastData();
   }, [units, city]);
 
   const handleclickunit = (e) => {
@@ -32,18 +34,19 @@ function App() {
     button.innerText = iscelsius ? "°F" : "°C";
     SetUnits(iscelsius ? "metric" : "imperial");
   };
+
   const enter = (e) => {
     if (e.keyCode === 13) {
       Setcity(e.currentTarget.value);
       e.currentTarget.blur();
     }
   };
+
   return (
     <div className="app" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay">
-        {weather && (
+        {forecast && (
           <div className="container">
-            {/* search-section */}
             <div className="section section__inputs">
               <input
                 onKeyDown={enter}
@@ -53,24 +56,26 @@ function App() {
               />
               <button onClick={(e) => handleclickunit(e)}>°F</button>
             </div>
-{/* temperture-section */}
-            <div className="section section__temperature">
-              <div className="icon">
-                <h3>
-                  {weather.name}, {weather.country}
-                </h3>
-                <img src={weather.iconURL} alt="wheather" />
-                <h3>{weather.description}</h3>
-              </div>
-              <div className="temperature">
-                <h1>
-                  {weather.temp.toFixed()}°{units === "metric" ? "C" : "F"}
-                </h1>
-              </div>
-            </div>
+<div>
+  <TodayWeather todayWeather={forecast.forecast[0]} country={forecast.country} placeName={forecast.cityName}/>
+</div>
 
-            {/* bottom description */}
-            <Description weather={weather} units={units} />
+            <div className=" section__forecast">
+              {forecast.forecast.map((dailyForecast, index) => (
+                <div key={index} className="forecast-item">
+                  <div className="forecast-item-header">
+                    <h3>{dailyForecast.dayOfWeek}</h3> {/* Display dayOfWeek instead of date */}
+                  </div>
+                  <div className="forecast-item-content">
+                    <img src={dailyForecast.iconURL} alt="weather" />
+                    <p>{dailyForecast.description}</p>
+                    <p>
+                      {dailyForecast.temp.toFixed()}°{units === "metric" ? "C" : "F"}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
