@@ -59,6 +59,7 @@ function App() {
 <div>
   <TodayWeather todayWeather={forecast.forecast[0]} country={forecast.country} placeName={forecast.cityName}/>
 </div>
+{/* forecast */}
 
             <div className=" section__forecast">
               {forecast.forecast.map((dailyForecast, index) => (

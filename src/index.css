@@ -139,4 +139,7 @@
   .forecast-item {
     width: calc(33.33% - 10px);
   }
+  .container,.overlay,.app{
+    height: auto;
+  }
 }
