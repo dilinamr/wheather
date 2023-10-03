@@ -1,6 +1,5 @@
 import hot from "./assets/hot.jpg";
 import cold from "./assets/cold.jpg";
-import { Description } from "./components/Description";
 import { useEffect, useState } from "react";
 import { getFormattedWeekForecast } from "./wheatherService";
 import TodayWeather from "./components/TodayWeather";
