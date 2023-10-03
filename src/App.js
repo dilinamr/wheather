@@ -56,22 +56,29 @@ function App() {
               />
               <button onClick={(e) => handleclickunit(e)}>°F</button>
             </div>
-<div>
-  <TodayWeather todayWeather={forecast.forecast[0]} country={forecast.country} placeName={forecast.cityName}/>
-</div>
-{/* forecast */}
+            {/* current weather */}
+            <div>
+              <TodayWeather
+                todayWeather={forecast.forecast[0]}
+                country={forecast.country}
+                placeName={forecast.cityName}
+              />
+            </div>
+            {/* forecast */}
 
             <div className=" section__forecast">
               {forecast.forecast.map((dailyForecast, index) => (
                 <div key={index} className="forecast-item">
                   <div className="forecast-item-header">
-                    <h3>{dailyForecast.dayOfWeek}</h3> {/* Display dayOfWeek instead of date */}
+                    <h3>{dailyForecast.dayOfWeek}</h3>{" "}
+                    {/* Display dayOfWeek instead of date */}
                   </div>
                   <div className="forecast-item-content">
                     <img src={dailyForecast.iconURL} alt="weather" />
                     <p>{dailyForecast.description}</p>
                     <p>
-                      {dailyForecast.temp.toFixed()}°{units === "metric" ? "C" : "F"}
+                      {dailyForecast.temp.toFixed()}°
+                      {units === "metric" ? "C" : "F"}
                     </p>
                   </div>
                 </div>

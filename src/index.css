@@ -116,8 +116,8 @@
 
 .today-weather{
   text-align: center;
-  padding: 5px;
-  width: 300px;
+  padding: 25px;
+  width: 500px;
   background-color: var(--section-overlay);
   color: white;
   border-radius: 5px;
@@ -141,5 +141,8 @@
   }
   .container,.overlay,.app{
     height: auto;
+  }
+  .today-weather{
+    width:   calc(100vw - 20px);
   }
 }

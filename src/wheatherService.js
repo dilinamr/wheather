@@ -1,7 +1,8 @@
 // export { getFormattedWeekForecast };
-const API_KEY = "bbf158cf887d3e8f2d09b284dd860a1f";
+const API_KEY = "80332e051732d8eaba6c203478ca47a7";
 
-const makeIconURL = (iconId) => `https://openweathermap.org/img/wn/${iconId}@2x.png`;
+const makeIconURL = (iconId) =>
+  `https://openweathermap.org/img/wn/${iconId}@2x.png`;
 
 const getFormattedWeekForecast = async (city, units = "metric") => {
   const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=${units}`;
@@ -26,8 +27,10 @@ const getFormattedWeekForecast = async (city, units = "metric") => {
 
       const { description, icon } = weather[0];
 
-      // Convert date to day of the week
-      const dayOfWeek = new Date(date).toLocaleDateString('en-US', { weekday: 'long' });
+      // Convert date to day of the week .
+      const dayOfWeek = new Date(date).toLocaleDateString("en-US", {
+        weekday: "long",
+      });
 
       dailyForecastList.push({
         dayOfWeek,
