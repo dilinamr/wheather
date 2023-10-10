@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wheather/static/css/main.790970d6.css",
-    "main.js": "/wheather/static/js/main.ceaba4ee.js",
+    "main.js": "/wheather/static/js/main.54f9d9e5.js",
     "static/media/cold.jpg": "/wheather/static/media/cold.d741463cb58ded423f1c.jpg",
     "static/media/hot.jpg": "/wheather/static/media/hot.3d657990458c520c0aa0.jpg",
     "index.html": "/wheather/index.html",
     "main.790970d6.css.map": "/wheather/static/css/main.790970d6.css.map",
-    "main.ceaba4ee.js.map": "/wheather/static/js/main.ceaba4ee.js.map"
+    "main.54f9d9e5.js.map": "/wheather/static/js/main.54f9d9e5.js.map"
   },
   "entrypoints": [
     "static/css/main.790970d6.css",
-    "static/js/main.ceaba4ee.js"
+    "static/js/main.54f9d9e5.js"
   ]
 }
