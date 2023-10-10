@@ -5,7 +5,7 @@ import { getFormattedWeekForecast } from "./wheatherService";
 import TodayWeather from "./components/TodayWeather";
 
 function App() {
-  const [city, Setcity] = useState("mahe");
+  const [city, Setcity] = useState("iceland");
   const [forecast, setForecast] = useState(null);
   const [units, SetUnits] = useState("metric");
   const [bg, Setbg] = useState(hot);
