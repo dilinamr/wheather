@@ -40,7 +40,7 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
- /* justify-content: space-between; */
+  /* justify-content: space-between; */
 }
 
 .section__inputs,
@@ -103,18 +103,17 @@
   flex-wrap: wrap;
   gap: 15px;
   justify-content: space-between;
-  
+
   color: white;
-  
 }
-.forecast-item{
+.forecast-item {
   background: var(--section-overlay);
   text-align: center;
   padding: 10px;
   border-radius: 5px;
 }
 
-.today-weather{
+.today-weather {
   text-align: center;
   padding: 25px;
   width: 500px;
@@ -139,10 +138,12 @@
   .forecast-item {
     width: calc(33.33% - 10px);
   }
-  .container,.overlay,.app{
+  .container,
+  .overlay,
+  .app {
     height: auto;
   }
-  .today-weather{
-    width:   calc(100vw - 20px);
+  .today-weather {
+    width: calc(100vw - 20px);
   }
 }

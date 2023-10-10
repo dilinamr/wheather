@@ -1,5 +1,5 @@
 // export { getFormattedWeekForecast };
-const API_KEY = "80332e051732d8eaba6c203478ca47a7";
+const API_KEY = "9c88b64bec8e548b78f3ebba95a32c98";
 
 const makeIconURL = (iconId) =>
   `https://openweathermap.org/img/wn/${iconId}@2x.png`;
